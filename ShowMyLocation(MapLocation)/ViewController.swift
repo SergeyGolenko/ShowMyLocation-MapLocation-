@@ -39,6 +39,14 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         self.courseLabel.text = String(location.course)
         self.altitudeLabel.text = String(location.altitude)
         
+        
+        //show on map
+        let locationCoordinate2d = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let locationDistance = CLLocationDistance(10_000)
+        let center = MKCoordinateRegion(center: locationCoordinate2d,latitudinalMeters: locationDistance,longitudinalMeters: locationDistance)
+        mapView.setRegion(center, animated: true)
+        
+        
         CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
             if error != nil {
                 print(error)
