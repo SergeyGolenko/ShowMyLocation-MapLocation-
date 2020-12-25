@@ -33,7 +33,37 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations)
+       var location = locations[0]
+        self.latitudeLabel.text = String(location.coordinate.latitude)
+        self.longitudeLabel.text = String(location.coordinate.longitude)
+        self.courseLabel.text = String(location.course)
+        self.altitudeLabel.text = String(location.altitude)
+        
+        CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+            if error != nil {
+                print(error)
+            } else {
+                if let placemark = placemarks?[0]{
+                     var address = ""
+                    if placemark.subThoroughfare != nil {
+                        address += placemark.subThoroughfare!
+                    }
+                    if placemark.thoroughfare != nil {
+                        address += placemark.thoroughfare! + "\n"
+                    }
+                    if placemark.subLocality != nil {
+                        address += placemark.subLocality! + "\n"
+                    }
+                    if placemark.country != nil {
+                        address += placemark.country! + "\n"
+                    }
+                    if placemark.postalCode != nil {
+                        address += placemark.postalCode! + "\n"
+                    }
+                    self.nearestAddressLabel.text = address
+                }
+            }
+        }
     }
 
 }
