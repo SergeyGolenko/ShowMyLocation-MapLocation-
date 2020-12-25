@@ -131,12 +131,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KY0-t6-Wxl">
+                                <rect key="frame" x="0.0" y="544" width="414" height="308"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xFn-js-7oP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="82a-Ba-bn1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CRO-PO-i19" secondAttribute="trailing" constant="30" id="Ao9-Uu-MnQ"/>
+                            <constraint firstItem="KY0-t6-Wxl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BBv-GW-FtM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KY0-t6-Wxl" secondAttribute="trailing" id="Cf7-M0-5pT"/>
                             <constraint firstItem="eTu-FS-euB" firstAttribute="centerY" secondItem="EnL-rR-Hwh" secondAttribute="centerY" id="F6Z-fh-beT"/>
                             <constraint firstItem="Rdf-mK-9Ys" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="GBM-eZ-9OM"/>
                             <constraint firstItem="EnL-rR-Hwh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="GBW-xl-qQr"/>
@@ -152,14 +157,24 @@
                             <constraint firstItem="CRO-PO-i19" firstAttribute="top" secondItem="O1l-UY-rNi" secondAttribute="bottom" constant="30" id="Sa8-Bt-NNQ"/>
                             <constraint firstItem="smY-5K-3bh" firstAttribute="centerY" secondItem="M09-lC-VPK" secondAttribute="centerY" id="X32-a3-kBh"/>
                             <constraint firstItem="EnL-rR-Hwh" firstAttribute="top" secondItem="M09-lC-VPK" secondAttribute="bottom" constant="20" id="aCB-7e-b5h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KY0-t6-Wxl" secondAttribute="bottom" constant="10" id="aYo-eR-Tmo"/>
                             <constraint firstItem="ecV-cr-YEv" firstAttribute="leading" secondItem="Ehp-Hq-U2v" secondAttribute="trailing" constant="30" id="im9-Yb-vIt"/>
                             <constraint firstItem="aRW-xs-E68" firstAttribute="leading" secondItem="Rdf-mK-9Ys" secondAttribute="trailing" constant="30" id="lz5-X3-cB9"/>
                             <constraint firstItem="eTu-FS-euB" firstAttribute="leading" secondItem="EnL-rR-Hwh" secondAttribute="trailing" constant="30" id="o5B-Er-Cwc"/>
                             <constraint firstItem="aRW-xs-E68" firstAttribute="centerY" secondItem="Rdf-mK-9Ys" secondAttribute="centerY" id="qQt-5y-3fZ"/>
                             <constraint firstItem="Ehp-Hq-U2v" firstAttribute="top" secondItem="Rdf-mK-9Ys" secondAttribute="bottom" constant="20" id="u52-t2-hQ6"/>
                             <constraint firstItem="M09-lC-VPK" firstAttribute="top" secondItem="xFn-js-7oP" secondAttribute="bottom" constant="50" id="yQn-Uu-oVF"/>
+                            <constraint firstItem="KY0-t6-Wxl" firstAttribute="top" secondItem="CRO-PO-i19" secondAttribute="bottom" constant="10" id="zlN-PG-0YF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="altitudeLabel" destination="ecV-cr-YEv" id="dMU-Q8-apk"/>
+                        <outlet property="courseLabel" destination="aRW-xs-E68" id="uvq-oK-fMk"/>
+                        <outlet property="latitudeLabel" destination="smY-5K-3bh" id="HSP-Vj-8gi"/>
+                        <outlet property="longitudeLabel" destination="eTu-FS-euB" id="BQu-MR-WfC"/>
+                        <outlet property="mapView" destination="KY0-t6-Wxl" id="qZ2-NC-AqS"/>
+                        <outlet property="nearestAddressLabel" destination="CRO-PO-i19" id="enh-J1-u0G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

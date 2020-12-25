@@ -11,6 +11,17 @@ import MapKit
 
 class ViewController: UIViewController,CLLocationManagerDelegate {
     
+    
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var courseLabel: UILabel!
+    @IBOutlet weak var altitudeLabel: UILabel!
+    @IBOutlet weak var nearestAddressLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
+    
+    
     var manager = CLLocationManager()
 
     override func viewDidLoad() {
